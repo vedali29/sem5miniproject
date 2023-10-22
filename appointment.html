@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html> 
 <head>
-	<title> Unity Hospital | Appointment </title>
+	<title> CHILD VACCINATION | Appointment </title>
 
 
 		<!-- Web Fonts -->
@@ -38,10 +38,10 @@
 	<div class="col-md-6">
 		<ul class="list-inline top-v1-contacts">
 		<li>
-		<i class="fa fa-envelope"></i> Email: unityhospital@gmail.com
+		<i class="fa fa-envelope"></i> Email: childvacc@gmail.com
 		</li>
 		<li>
-		<i class="fa fa-phone"></i> Contact no : 88666 00555
+		<i class="fa fa-phone"></i> Contact no : 9104563825
 		</li>
 		</ul>
 	</div>
@@ -65,7 +65,7 @@
 
 				<div class="navbar-brand">
 				<a href="index.html">
-				<img src="assets/img/logo/unity_white.jpg" alt="Logo">
+				<img src="C:\Users\dsakh\Desktop\logochildvacc1.jpg" alt="Logo">
 				</a>
 				</div>
 				</div><!--/end responsive container-->
@@ -87,41 +87,48 @@
 				</li>
 				<!-- End Home-->
 
-				<!-- About Us -->
+				<!-- Registration -->
 				<li class="mega-menu-fullwidth">
-				<a href="about.html" >
-				ABOUT US
-				</a>	
-				</li>
-				<!-- End About us -->
+					<a href="registration.html" >
+					REGISTRATION
+					</a>	
+					</li>
+					<!-- End registration -->
+	
+					<!-- login -->
+					<li class="mega-menu-fullwidth">
+					<a href="login.html" >
+					LOGIN
+					</a>	
+					</li>
+					<!-- End login -->
 
-				<!-- Doctors -->
+					<!-- Doctors -->
 				<li class="mega-menu-fullwidth">
-				<a href="doctors.html" >
-				DOCTORS
-				</a>
+					<a href="doctors.html" >
+					PEDIATRICIANS
+					</a>
+	
+					</li>
+					<!-- End Doctors -->
 
-				</li>
-				<!-- End Doctors -->
-
+					<!-- Appointment -->
+				<li class="mega-menu-fullwidth">
+					<a href="appointment.html">
+					BOOK APPOINTMENT
+					</a>
+	
+					</li>
+					<!-- End Appointment -->
 
 				<!-- Gallery -->
 				<li class="mega-menu-fullwidth">
 				<a href="gallery.html" >
-				GALLERY
+				VACCINATION
 				</a>
 
 				</li>
 				<!-- End Gallery -->
-
-
-				<!-- Blog -->
-				<li class="mega-menu-fullwidth">
-				<a href="blog.html" >
-				BLOGS
-				</a>	
-				</li>
-				<!-- End Blog -->
 
 				<!-- Contact Us -->
 				<li class="mega-menu-fullwidth">
@@ -130,31 +137,6 @@
 				</a>	
 				</li>
 				<!-- End Contact us -->
-
-				<!-- Registration -->
-				<li class="mega-menu-fullwidth">
-				<a href="registration.html" >
-				REGISTRATION
-				</a>	
-				</li>
-				<!-- End registration -->
-
-				<!-- login -->
-				<li class="mega-menu-fullwidth">
-				<a href="login.html" >
-				LOGIN
-				</a>	
-				</li>
-				<!-- End login -->
-
-				<!-- Appointment -->
-				<li class="mega-menu-fullwidth">
-				<a href="appointment.html">
-				BOOK APPOINTMENT
-				</a>
-
-				</li>
-				<!-- End Appointment -->
 
 				</ul>
 
@@ -178,10 +160,10 @@
 				<fieldset>
 				<div class="row">
 				<section class="col col-6">
-				<label class="label">Name</label>
+				<label class="label">Child Name</label>
 				<label class="input">
 				<i class="icon-append fa fa-user"></i>
-				<input type="text" name="name" id="name" required="">
+				<input type="text" name=" Child name" id="name" required="">
 				</label>
 				</section>
 				<section class="col col-6">
@@ -194,34 +176,36 @@
 				</div>
 
 				<section>
-				<label class="label">Purpose Of Appointment</label>
-				<label class="input">
-				<i class="icon-append fa fa-tag"></i>
-				<input type="text" name="subject" required="">
-				</label>
-				</section>
-
-				<section>
-				<label class="label">Mobile Number</label>
-				<label class="input">
-				<i class="icon-append fa fa-phone"></i>
-				<input type="text" name="number" id="number" required="">
-				</label>
-				</section> 	
-
-				<section>
-				<label class="select">
-				<select name="Department" required="">
-				<option value="" selected="" disabled="">Select Department</option>
-				<option>Cardiology</option>
-				<option>Dermatology and Cosmetology</option>
-				<option>General Surgery</option>
-				<option>Health Checkup Packages</option>
-				<option>Neurology</option>
+					<label class="select">
+					<select name="Age Group" required="">
+					<option value="" selected="" disabled="">Select Age group</option>
+				<option>6 Week </option>
+				<option>10 Week</option>
+				<option>14 Week</option>
+				<option>9 Month</option>
+				<option>12 Month</option>
+				<option>15 Month </option>
+				<option>16-18 Month</option>
+				<option>18 Month </option>
+				<option>9 Month</option>
+				<option>2 Year </option>
+				<option>5 Year </option>
+				<option>10 Year </option>
 				</select>
 				<i></i>
 				</label>
 				</section>
+
+				<section>
+				<label class="label">Last Vaccine Certifiacte</label>
+				<label class="form-control">
+				<i class="icon-append fa fa-phone"></i>
+				<form action="/action_page.php">
+					<input type="file" id="myFile" name="filename">
+				</label>
+				</section> 
+                 
+				<section>
 				<div class="row">
 				<section class="col col-6">
 				<label class="date">Select Date</label>
@@ -234,14 +218,13 @@
 				<label class="time">Select Time</label>
 				<label class="select">
 				<select name="Time" required="">
-				<option value="" selected="" disabled="">Select Time</option>
+				<option value="" selected="" disabled="">Select Time slot</option>
 				<option>8 AM - 10 AM</option>
 				<option>10 AM - 12 PM</option>
 				<option>12 PM - 2 PM</option>
 				<option>2 PM - 4 PM</option>
 				<option>4 PM - 6 PM</option>
-				<option>6 PM - 8 PM</option>
-				<option>8 PM - 10 PM</option>
+			
 				</select>
 				<i></i>
 				</label>
@@ -255,39 +238,22 @@
 				</fieldset>
 
 				<footer>
-				<button type="submit" class="btn-u">Send message</button>
+				<button type="submit" class="btn-u">SUBMIT</button>
+				<a href="index.html">
+					<img src="C:\Users\dsakh\Desktop\eeee.jpg" alt="Logo">
+					</a>
 				</footer>
 
 
 				</form>
 				</div><!--/col-md-9-->
 
-				<!-- side part of appointment -->
-						<div class="col-md-3" style="margin-top: 56px;">
-						<!-- Address -->
-						<div class="headline"><h2>Appointment Notes</h2></div>
-						<p> You Only Can Book Your Appointment Between <strong>8 AM to 10 PM.</strong> </p>
-						<p> In Other Times You Can Call Our Ambulance Which Is Available 24/7. </p>
-
-						<!-- Business Hours -->
-						<div class="headline" style="margin-top: 20px;"><h2>Business Hours</h2></div>
-						<ul class="list-unstyled " style="margin-bottom: 30px;">
-						<li><strong>Monday-Saturday:</strong> 24/7 Available.</li>
-						<li><strong>Sunday:</strong> 4 AM to 11 PM.</li>
-						</ul>
-
-						<!-- Why choose us? -->
-						<div class="headline"><h2>Why Choose Us?</h2></div>
-						<p>All healthcare facilities can be accessed here under one roof, making UNITY Hospital a one point contact for all your healthcare needs.</p>
-						<ul class="list-unstyled">
-						<li><i class="fa fa-check color-green"></i> 24/7 Ambulance Support.</li>
-						<li><i class="fa fa-check color-green"></i> Eminent and Experienced Doctors.</li>
-						<li><i class="fa fa-check color-green"></i> Multiple Options For Treatment.</li>
-						</ul>
-						</div><!--/col-md-3-->
-						</div><!--/row-->
-						</div><!--/container-->
-
+				
+						<!-- side part of appointment -->
+						
+				<div class="headline"><h2>READY TO VACCINATE !!</h2></div>
+						
+				</div>
 
 		<!--=== Footer ===-->
 		<div class="footer-v1">
@@ -296,9 +262,9 @@
 		<div class="row">
 		<!-- About -->
 		<div class="col-md-3 " style="margin-bottom: 40px;">
-		<a href="index.html"><img id="logo-footer" class="footer-logo" src="assets/img/logo/unity_white.jpg" alt=""></a>
-		<p>At Unity Hospital, we are convinced that 'quality' and 'lowest cost' are not mutually exclusive when it comes to healthcare delivery.</p>
-		<p>Our mission is to deliver high quality, affordable healthcare services to the broader population in India.</p>
+		<a href="index.html"><img id="logo-footer" class="footer-logo" src="C:\Users\dsakh\Desktop\vaccimages\logochildvacc.jpg" alt=""></a>
+		<p>On-time vaccination throughout childhood is essential because it helps provide immunity before children are exposed to potentially life-threatening diseases.</p>
+		<p>Our mission is to ensure that they are safe and effective for children to receive at the recommended ages.</p>
 		</div><!--/col-md-3-->
 		<!-- End About -->
 
@@ -309,15 +275,15 @@
 		<ul class="list-unstyled latest-list">
 		<li>
 		<a href="blog.html">Incredible content</a>
-		<small>December 16, 2020</small>
+		<small>October 16, 2023</small>
 		</li>
 		<li>
 		<a href="gallery.html">Latest Images</a>
-		<small>December 16, 2020</small>
+		<small>October 16, 2023</small>
 		</li>
 		<li>
 		<a href="terms.html">Terms and Conditions</a>
-		<small>December 16, 2020</small>
+		<small> October 16, 2023</small>
 		</li>
 		</ul>
 		</div>
@@ -335,14 +301,14 @@
 		</div><!--/col-md-3-->
 		<!-- End Link List -->
 
-		<!-- Address -->
+		<!-- Details -->
 		<div class="col-md-3 map-img " style="margin-bottom: 40px;">
 		<div class="headline"><h2>Contact Us</h2></div>
 		<address class="" style="margin-bottom: 40px;">
-		Unity Hospital <br />
-		Ahmedabad, IN <br />
-		Phone: 886 666 00555 <br />
-		Email: unityhospital@gmail.com 
+		Child Vaccination<br />
+		Mumbai, IN <br />
+		Phone: 9104563825<br />
+		Email: childvacc@gmail.com 
 		</address>
 		</div><!--/col-md-3-->
 		<!-- End Address -->

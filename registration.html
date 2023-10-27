@@ -21,6 +21,7 @@
 
 		<!-- CSS Customization -->
 		<link rel="stylesheet" href="assets/css/custom.css">
+		<script src="javascript.js"></script>
 
 </head>
 
@@ -62,7 +63,7 @@
 
 				<div class="navbar-brand">
 				<a href="index.html">
-				<img src="C:\Users\dsakh\Desktop\logochildvacc1.jpg" alt="Logo">
+				<img src="./assets/img/logo/logochildvacc1.jpg">
 				</a>
 				</div>
 				</div><!--/end responsive container-->
@@ -101,41 +102,41 @@
 					<!-- End login -->	
 
 				<!-- Doctors -->
-				<li class="mega-menu-fullwidth">
+				<!-- <li class="mega-menu-fullwidth">
 				<a href="doctors.html" >
 				PEDIATRICIANS
 				</a>
 
-				</li>
+				</li> -->
 				<!-- End Doctors -->
 
 				
             <!-- Appointment -->
-					<li class="mega-menu-fullwidth">
+					<!-- <li class="mega-menu-fullwidth">
 						<a href="appointment.html">
 						 APPOINTMENT
 						</a>
 		
-						</li>
+						</li> -->
 						<!-- End Appointment -->
 
 
 				<!-- Gallery -->
-				<li class="mega-menu-fullwidth">
+				<!-- <li class="mega-menu-fullwidth">
 				<a href="gallery.html" >
 				VACCINATION
 				</a>
 
-				</li>
+				</li> -->
 				<!-- End Gallery -->
 
 				<!-- HISTORY -->
-				<li class="mega-menu-fullwidth">
+				<!-- <li class="mega-menu-fullwidth">
 					<a href="blog.html" >
 					HISTORY
 					</a>
 	
-					</li>
+					</li> -->
 					<!-- End HISTORY -->
 
 				<!-- Contact Us -->
@@ -145,6 +146,12 @@
 				</a>	
 				</li>
 				<!-- End Contact us -->
+
+				<li class="mega-menu-fullwidth">
+					<a href="about.html">
+						About Us
+					</a>
+				</li>
 
 			</ul>
 
@@ -169,32 +176,32 @@
 				<div class="container content">
 				<div class="row">
 				<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-				<form onsubmit="showMsg(0);return false;" method="post" class="reg-page">
+				<form onsubmit="showMsg(0);return false;" method="post" class="reg-page" id="registerForm">
 				<div class="reg-header">
 				<h2>Register a new account</h2>
 				<p>Already Signed Up? Click <a href="login.html" class="color-green">Sign In</a> to login your account.</p>
 				</div>
 
-				<label>Child Name</label>
-				<input type="text" class="form-control " style="margin-bottom: 20px;" required="">
+				<label id="childname">Child Name</label>
+				<input type="text" class="form-control " style="margin-bottom: 20px;" required="" id="childname">
 
-				<label>Parent Name <span class="color-red">*</span></label>
-				<input type="text" class="form-control " style="margin-bottom: 20px;" required="">
+				<label id="parentname">Parent Name <span class="color-red">*</span></label>
+				<input type="text" class="form-control " style="margin-bottom: 20px;" required="" id="parentname">
 
-				<label>Child Birth date</label>
-                <input type="date" class="form-control " style="margin-bottom: 20px;" required="">
+				<label id="birthdate">Child Birth date</label>
+                <input type="date" class="form-control " style="margin-bottom: 20px;" required="" id="birthdate">
 
-				<label>Email Address <span class="color-red">*</span></label>
-				<input type="text" class="form-control " style="margin-bottom: 20px;" required="">
+				<label id="email">Email Address <span class="color-red">*</span></label>
+				<input type="text" class="form-control " style="margin-bottom: 20px;" required="" id="email">
 
 				<div class="row">
 				<div class="col-sm-6">
-				<label>Password <span class="color-red">*</span></label>
-				<input type="password" class="form-control " style="margin-bottom: 20px;" required="">
+				<label id="password">Password <span class="color-red">*</span></label>
+				<input type="password" class="form-control " style="margin-bottom: 20px;" required="" id="password">
 				</div>
 				<div class="col-sm-6">
-				<label>Confirm Password <span class="color-red">*</span></label>
-				<input type="password" class="form-control " style="margin-bottom: 20px;" required="">
+				<label id="cpassword">Confirm Password <span class="color-red">*</span></label>
+				<input type="password" class="form-control " style="margin-bottom: 20px;" required="" id="cpassword">
 				</div>
 				</div>
 				<div class="alert alert-success successBox">
@@ -228,7 +235,7 @@
 		<div class="row">
 		<!-- About -->
 		<div class="col-md-3 " style="margin-bottom: 40px;">
-		<a href="index.html"><img id="logo-footer" class="footer-logo" src="C:\Users\dsakh\Desktop\logochildvacc1.jpg" alt=""></a>
+		<a href="index.html"><img id="logo-footer" class="footer-logo" src="./assets/img/logo/logochildvacc1.jpg" alt=""></a>
 		<p>CHILD VACCINATION : On-time vaccination throughout childhood is essential because it helps provide immunity before children are exposed to potentially life-threatening diseases.</p>
 		<p>Our mission is to ensure that the children are safe and effective for children to receive at the recommended ages.ices to the broader population in India.</p>
 		</div><!--/col-md-3-->
@@ -338,6 +345,7 @@
 	<!-- Java scripts -->
 	<script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
 	<script type="text/javascript">
+
 	function showMsg(flag){
 	if(flag==0){
 	$('.successBox').css('display', 'block');
@@ -346,6 +354,8 @@
 	}
 	}
 	</script>
+
+	<script source="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
 
 </body>
 </html>

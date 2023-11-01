@@ -16,7 +16,8 @@ from firebase_admin import credentials
 
 # Use the path to the JSON file containing your Firebase Admin SDK credentials
 # cred = credentials.Certificate('path/to/your/firebase/credentials.json')
-# firebase_admin.initialize_app(cred)
+# firebase_admin.initialize_app(cred,options={
+    # 'databaseURL': 'https://your-project-id.firebaseio.com/')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent

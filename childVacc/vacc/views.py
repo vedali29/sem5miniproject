@@ -6,6 +6,9 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
 import firebase_admin.auth
+from .models import Appointment
+import firebase_admin
+from firebase_admin import db
 # from .forms import RegistrationForm
 
 def child(request):
@@ -126,3 +129,48 @@ def register_user(request):
         form = RegistrationForm()
 
     return render(request, 'registration.html', {'form': form})
+
+def appointment_form(request):
+    if request.method == 'POST':
+        # submission
+        child_name = request.POST.get('child_name')
+        email = request.POST.get('email')
+        age_group = request.POST.get('age_group')
+        doctor = request.POST.get('doctor')
+        last_certificate = request.FILES.get('last_certificate')
+        appointment_date = request.POST.get('appointment_date')
+        appointment_time = request.POST.get('appointment_time')
+
+        # Save  local
+        appointment = Appointment(
+            child_name=child_name,
+            email=email,
+            age_group=age_group,
+            doctor=doctor,
+            last_certificate=last_certificate,
+            appointment_date=appointment_date,
+            appointment_time=appointment_time,
+        )
+        appointment.save()
+
+        # Save Firebase
+        firebase_ref = db.reference('appointments')
+        firebase_ref.push({
+            'child_name': child_name,
+            'email': email,
+            'age_group': age_group,
+            'doctor': doctor,
+            'appointment_date': appointment_date,
+            'appointment_time': appointment_time,
+        })
+
+        return redirect('success_page')
+    else:
+        return render(request, 'appointment_form.html')
+
+def appointments_list(request):
+    # Retrieve appointments
+    firebase_ref = db.reference('appointments')
+    appointments = firebase_ref.get()
+
+    return render(request, 'appointments_list.html', {'appointments': appointments})

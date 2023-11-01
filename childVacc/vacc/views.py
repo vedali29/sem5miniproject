@@ -6,7 +6,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
 import firebase_admin.auth
-from .forms import RegistrationForm
+# from .forms import RegistrationForm
 
 def child(request):
   template = loader.get_template('index.html')
@@ -52,7 +52,7 @@ def profile(request):
   template = loader.get_template('profile.html')
   return HttpResponse(template.render())
 
-# def registration(request):
+def registration(request):
   template = loader.get_template('registration.html')
   return HttpResponse(template.render())
 
@@ -103,7 +103,7 @@ def login(request):
     return render(request, 'login.html')
 
 
-def registration(request):
+def register_user(request):
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():

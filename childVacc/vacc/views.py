@@ -5,6 +5,8 @@ import requests
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages
+import firebase_admin.auth
+from .forms import RegistrationForm
 
 def child(request):
   template = loader.get_template('index.html')
@@ -50,7 +52,7 @@ def profile(request):
   template = loader.get_template('profile.html')
   return HttpResponse(template.render())
 
-def registration(request):
+# def registration(request):
   template = loader.get_template('registration.html')
   return HttpResponse(template.render())
 
@@ -99,3 +101,28 @@ def login(request):
 
     # Render the login page template
     return render(request, 'login.html')
+
+
+def registration(request):
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            # Get data from the form
+            child_name = form.cleaned_data['child_name']
+            parent_name = form.cleaned_data['parent_name']
+            email = form.cleaned_data['email']
+            password = form.cleaned_data['password']
+
+            # Create user in Firebase Authentication
+            try:
+                user = firebase_admin.auth.create_user(email=email, password=password)
+                # Save user data in your Django model
+                UserProfile.objects.create(child_name=child_name, parent_name=parent_name, email=email)
+                messages.success(request, 'Registration successful. You can now log in.')
+                return redirect('login')  # Redirect to login page after successful registration
+            except firebase_admin.auth.AuthError as e:
+                messages.error(request, f'Registration failed: {e}')
+    else:
+        form = RegistrationForm()
+
+    return render(request, 'registration.html', {'form': form})

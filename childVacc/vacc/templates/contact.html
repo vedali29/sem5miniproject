@@ -68,7 +68,7 @@
 					</button>
 
 					<div class="navbar-brand">
-					<a href="index.php">
+					<a href="{% url 'child' %}">
 					<img src="C:\Users\dsakh\Desktop\Documents\GitHub\Hospital-Management-Html\assets\img\logo\logochildvacc1.jpg" alt="Logo">
 					</a>
 					</div>
@@ -81,14 +81,14 @@
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<li class="mega-menu-fullwidth">
-						<a href="index.php" >
+						<a href="{% url 'child' %}" >
 						Home
 						</a>	
 						</li>
 
 					<!-- Registration -->
 					<li class="mega-menu-fullwidth">
-						<a href="registration.php" >
+						<a href="{% url 'registration' %}" >
 						REGISTRATION
 						</a>	
 						</li>
@@ -96,7 +96,7 @@
 
                     <!-- login -->
 					<li class="mega-menu-fullwidth">
-						<a href="login.php" >
+						<a href="{% url 'login' %}" >
 						LOGIN
 						</a>	
 						</li>
@@ -113,7 +113,7 @@
 
 					<!-- Appointment -->
 					<!-- <li class="mega-menu-fullwidth">
-						<a href="appointment.php">
+						<a href="{% url 'appointment' %}">
 						BOOK APPOINTMENT
 						</a>
 	
@@ -123,7 +123,7 @@
 
 					<!-- Gallery -->
 					<!-- <li class="mega-menu-fullwidth">
-					<a href="gallery.php" >
+					<a href="{% url 'gallery' %}" >
 					VACCINATION
 					</a>
 
@@ -134,7 +134,7 @@
 					<!-- Blog -->
 					<!-- 
 					<li class="mega-menu-fullwidth">
-					<a href="blog.php" >
+					<a href="{% url 'blog' %}" >
 					HISTORY
 					</a>	
 					</li>
@@ -142,7 +142,7 @@
 
 					<!-- Contact Us -->
 					<li class="mega-menu-fullwidth">
-					<a href="about.php" >
+					<a href="{% url 'about' %}" >
 					About Us
 					</a>	
 					</li>
@@ -257,7 +257,7 @@
 			<div class="row">
 			<!-- About -->
 			<div class="col-md-3 " style="margin-bottom: 40px;">
-				<a href="index.php"><img id="logo-footer" class="footer-logo" src="C:\Users\dsakh\Desktop\logochildvacc1.jpg" alt=""></a>
+				<a href="{% url 'child' %}"><img id="logo-footer" class="footer-logo" src="C:\Users\dsakh\Desktop\logochildvacc1.jpg" alt=""></a>
 				<p>CHILD VACCINATION : On-time vaccination throughout childhood is essential because it helps provide immunity before children are exposed to potentially life-threatening diseases.</p>
 				<p>Our mission is to ensure that the children are safe and effective for children to receive at the recommended ages.ices to the broader population in India.</p>
 			</div><!--/col-md-3-->
@@ -269,15 +269,15 @@
 			<div class="headline"><h2>Latest Posts</h2></div>
 			<ul class="list-unstyled latest-list">
 			<li>
-			<a href="blog.php">Incredible content</a>
+			<a href="{% url 'blog' %}">Incredible content</a>
 			<small>October 16, 2023</small>
 			</li>
 			<li>
-			<a href="gallery.php">Latest Images</a>
+			<a href="{% url 'gallery' %}">Latest Images</a>
 			<small>October 16, 2023</small>
 			</li>
 			<li>
-			<a href="terms.php">Terms and Conditions</a>
+			<a href="{% url 'terms' %}">Terms and Conditions</a>
 			<small>October 16, 2023</small>
 			</li>
 			</ul>
@@ -289,9 +289,9 @@
 			<div class="col-md-3 " style="margin-bottom: 40px;">
 			<div class="headline"><h2>Useful Links</h2></div>
 			<ul class="list-unstyled link-list">
-			<li><a href="about.php">About us</a><i class="fa fa-angle-right"></i></li>
-			<li><a href="contact.php">Contact us</a><i class="fa fa-angle-right"></i></li>
-			<li><a href="appointment.php">Book Appointment</a><i class="fa fa-angle-right"></i></li>
+			<li><a href="{% url 'about' %}">About us</a><i class="fa fa-angle-right"></i></li>
+			<li><a href="{% url 'contact' %}">Contact us</a><i class="fa fa-angle-right"></i></li>
+			<li><a href="{% url 'appointment' %}">Book Appointment</a><i class="fa fa-angle-right"></i></li>
 			</ul>
 			</div><!--/col-md-3-->
 			<!-- End Link List -->
@@ -317,7 +317,7 @@
 			<div class="col-md-6">
 			<p>
 			2023 &copy; All Rights Reserved.
-			<a href="privacy.php">Privacy Policy</a> | <a href="terms.php">Terms of Service</a>
+			<a href="{% url 'privacy' %}">Privacy Policy</a> | <a href="{% url 'terms' %}">Terms of Service</a>
 			</p>
 			</div>
 

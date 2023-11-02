@@ -14,4 +14,7 @@ class Appointment(models.Model):
     last_certificate = models.FileField(upload_to='certificates/')
     appointment_date = models.DateField()
     appointment_time = models.CharField(max_length=20)
+    
+
+
 # Create your models here.

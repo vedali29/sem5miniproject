@@ -10,4 +10,6 @@ urlpatterns = [
     
     # Dynamically create paths for each view in the list
     *[path(f'{i}/', getattr(views, i), name=i) for i in view_list],
+    
+    path('main',views.register_user,name="reg_user"),
 ]

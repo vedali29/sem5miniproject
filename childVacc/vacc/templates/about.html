@@ -65,7 +65,7 @@
 
 				<div class="navbar-brand">
 				<a href="{% url 'child' %}">
-				<img src="./assets/img/logo/logochildvacc1.jpg" alt="Logo"/>
+				<img src="{%static '/assets/img/logo/logochildvacc1.jpg'%}" alt="Logo"/>
 				</a>
 				</div>
 				</div><!--/end responsive container-->
@@ -314,7 +314,7 @@
 		<div class="row">
 		<!-- About -->
 		<div class="col-md-3" style="margin-bottom: 40px;">
-		<a href="{% url 'child' %}"><img id="logo-footer" class="footer-logo" src="./assets/img/logo/logochildvacc1.jpg" alt=""/></a>
+		<a href="{% url 'child' %}"><img id="logo-footer" class="footer-logo" src="{%static '/assets/img/logo/logochildvacc1.jpg'%}" alt=""/></a>
 		<p>CHILD VACCINATION : On-time vaccination throughout childhood is essential because it helps provide immunity before children are exposed to potentially life-threatening diseases.</p>
 		<p>Our mission is to ensure that the children are safe and effective for children to receive at the recommended ages.ices to the broader population in India.</p>
 
@@ -423,6 +423,4 @@
 
 </body>
 </html>
-
-
 

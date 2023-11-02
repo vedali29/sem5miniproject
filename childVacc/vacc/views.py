@@ -9,6 +9,8 @@ import firebase_admin.auth
 from .models import Appointment
 import firebase_admin
 from firebase_admin import db
+from django.views.decorators.csrf import csrf_exempt,csrf_protect
+# from .forms import history
 # from .forms import RegistrationForm
 
 def child(request):
@@ -53,8 +55,10 @@ def privacy(request):
 
 def profile(request):
   template = loader.get_template('profile.html')
+  # firebase_data = get_firebase_data()
   return HttpResponse(template.render())
 
+# @csrf_exempt
 def registration(request):
   template = loader.get_template('registration.html')
   return HttpResponse(template.render())
@@ -62,7 +66,6 @@ def registration(request):
 def terms(request):
   template = loader.get_template('terms.html')
   return HttpResponse(template.render())
-
 
 def login(request):
     if request.method == 'POST':
@@ -105,14 +108,17 @@ def login(request):
     # Render the login page template
     return render(request, 'login.html')
 
-
+@csrf_protect
 def register_user(request):
+    firebase_ref = db.reference('appointments')
+    appointments = firebase_ref.get()
+    print(request.POST)
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
         if form.is_valid():
             # Get data from the form
-            child_name = form.cleaned_data['child_name']
-            parent_name = form.cleaned_data['parent_name']
+            child_name = form.cleaned_data['childname']
+            parent_name = form.cleaned_data['parentname']
             email = form.cleaned_data['email']
             password = form.cleaned_data['password']
 
@@ -129,6 +135,7 @@ def register_user(request):
         form = RegistrationForm()
 
     return render(request, 'registration.html', {'form': form})
+
 
 def appointment_form(request):
     if request.method == 'POST':
@@ -166,7 +173,7 @@ def appointment_form(request):
 
         return redirect('success_page')
     else:
-        return render(request, 'appointment_form.html')
+        return render(request, 'appointment.html')
 
 def appointments_list(request):
     # Retrieve appointments
@@ -174,3 +181,4 @@ def appointments_list(request):
     appointments = firebase_ref.get()
 
     return render(request, 'appointments_list.html', {'appointments': appointments})
+

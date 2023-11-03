@@ -1,0 +1,369 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CHILD VACCINATION | Blog</title>
+
+    <!-- Web Fonts -->
+	{%load static%}
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin">
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
+    <!-- CSS Header and Footer -->
+    <link rel="stylesheet" href="{% static 'assets/css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/footer.css' %}">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/line-icons-pro/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/line-icons/line-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/font-awesome/css/font-awesome.min.css' %}">
+
+    <!-- CSS Page Style -->
+    <link rel="stylesheet" href="{% static 'assets/css/blog_timeline.css' %}">
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/custom.css' %}">
+</head>
+<body>
+	<div class="wrapper">
+		<!--=== Header v1 ===-->
+	<div class="header-v1">
+		<!-- Topbar -->
+		<div class="topbar-v1">
+		<div class="container">
+		<div class="row">
+		<div class="col-md-6">
+			<ul class="list-inline top-v1-contacts">
+				<li>
+				<i class="fa fa-envelope"></i> Email: childvacc@gmail.com
+				</li>
+				<li>
+				<i class="fa fa-phone"></i> Contact no : 9014563825
+				</li>
+			</ul>
+		</div>
+		</div>
+		</div>
+		</div>
+
+	<!-- End Topbar -->
+	{% load static %}
+
+    <script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+
+		<!-- Navbar -->
+		<div class="navbar mega-menu" role="navigation">
+		<div class="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="res-container">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+
+		<div class="navbar-brand">
+			<a href="{% url 'child' %}">
+			<img src="/assets/img/logo/logochildvacc1.jpg" alt="Logo">
+			</a>
+		</div>
+		</div><!--/end responsive container-->
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse navbar-responsive-collapse">
+		<div class="res-container">
+			<ul class="nav navbar-nav">
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+
+
+				<!-- Home  -->
+				<li class="mega-menu-fullwidth">
+				<a href="{% url 'profile' %}" style="font-size: large;" >
+				Back
+				</a>
+
+				</li>
+				<!-- End Home-->
+
+				<!-- About Us -->
+				<!-- <li class="mega-menu-fullwidth">
+				<a href="{% url 'about' %}" >
+				ABOUT US
+				</a>	
+				</li> -->
+				<!-- End About us -->
+
+				<!-- Registration -->
+				<!-- <li class="mega-menu-fullwidth">
+					<a href="{% url 'registration' %}" >
+					REGISTRATION
+					</a>	
+					</li> -->
+					<!-- End registration -->
+	
+					<!-- login -->
+					<!-- <li class="mega-menu-fullwidth">
+					<a href="{% url 'login' %}" >
+					LOGIN
+					</a>	
+					</li> -->
+					<!-- End login -->
+
+				<!-- Doctors -->
+				<!-- <li class="mega-menu-fullwidth">
+				<a href="doctors.php" >
+				DOCTORS
+				</a>
+
+				</li> -->
+				<!-- End Doctors -->
+
+				<!-- Appointment -->
+				<!-- <li class="mega-menu-fullwidth">
+					<a href="{% url 'appointment' %}">
+						BOOK APPOINTMENT
+					</a>
+	
+					</li> -->
+					<!-- End Appointment -->
+
+
+				<!-- Gallery -->
+				<!-- <li class="mega-menu-fullwidth">
+				<a href="{% url 'gallery' %}" >
+				VACCINATION
+				 </a>
+				 </li> -->
+				<!-- End Gallery -->
+
+
+				<!-- Blog -->
+				<!-- <li class="mega-menu-fullwidth">
+				<a href="{% url 'blog' %}" >
+				HISTORY
+				</a>	
+				</li> -->
+				<!-- End Blog -->
+
+				<!-- Contact Us -->
+				<!-- <li class="mega-menu-fullwidth">
+				<a href="{% url 'contact' %}" >
+				CONTACT US
+				 </a>	
+				 </li>
+				End Contact us -->
+	        </ul>
+
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
+		<!-- End Navbar -->
+
+
+		<!-- Image title -->
+
+		<div style="text-align: center; margin-top: 50px; margin-bottom: 40px;">
+			<h2>Vaccination History</h2>
+		</div>
+	<!-- End title  -->
+
+		<!--=== Content Part ===-->
+		<!-- BLOG 1 -->
+
+		<body style="text-align: center;">
+			<h1>Child Vaccinations</h1>
+		
+			<form style="display: inline-block; text-align: left;">
+				<label>
+					<input type="checkbox" name="measles" id="measles">
+					Measles Vaccine
+				</label><br>
+		
+				<label>
+					<input type="checkbox" name="polio" id="polio">
+					Polio Vaccine
+				</label><br>
+		
+				<label>
+					<input type="checkbox" name="tetanus" id="tetanus">
+					Rotavirus Vaccne
+				</label><br>
+		
+				<label>
+					<input type="checkbox" name="tetanus" id="tetanus">
+					Pneumococcal Conjugate Vaccine (PCV)
+				</label><br>
+				<!-- Add more vaccinations as needed -->
+				<div id="newVaccination">
+					<input type="text" id="vaccineName" placeholder="Enter new vaccination name">
+					<button type="button" onclick="addVaccination()">Add</button>
+				</div>
+		
+				<input type="button" value="Confirm" onclick="confirmVaccinations()">
+			</form>
+		
+			<div id="confirmationMessage" style="margin-top: 10px;"></div>
+		
+			<script>
+				function confirmVaccinations() {
+					const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+					let confirmationMessage = "Confirmed Vaccinations: ";
+		
+					checkboxes.forEach(function(checkbox) {
+						if (checkbox.checked) {
+							confirmationMessage += checkbox.name + ', ';
+						}
+					});
+		
+					confirmationMessage = confirmationMessage.slice(0, -2); // Remove the trailing comma and space
+		
+					document.getElementById('confirmationMessage').textContent = confirmationMessage;
+				}
+
+				function addVaccination() {
+            const vaccineName = document.getElementById('vaccineName').value;
+
+            if (vaccineName.trim() !== '') {
+                const newVaccination = document.createElement('div');
+                newVaccination.innerHTML = `
+                    <label>
+                        <input type="checkbox" name="${vaccineName}" id="${vaccineName}">
+                        ${vaccineName}
+                    </label><br>
+                `;
+
+                document.getElementById('newVaccination').appendChild(newVaccination);
+                document.getElementById('vaccineName').value = ''; // Clear the input field
+            }
+        }
+			</script>
+
+        <div class="container" style="align-items: center; justify-content: center;">
+			<h3>for getting whole information regarding vaccination you can visit site:</h3>
+            <a href="https://www.cdc.gov/vaccines/parents/by-age/newborn-birth">Read About Vaccines</a>
+		</div>
+
+<!--=== Footer ===-->
+			<div class="footer-v1">
+			<div class="footer">
+			<div class="container">
+			<div class="row">
+			<!-- About -->
+			<div class="col-md-3 " style="margin-bottom: 40px;">
+				<a href="{% url 'child' %}"><img id="logo-footer" class="footer-logo" src="/assets/img/logo/logochildvacc1.jpg" alt=""></a>
+				<p>CHILD VACCINATION : On-time vaccination throughout childhood is essential because it helps provide immunity before children are exposed to potentially life-threatening diseases.</p>
+				<p>Our mission is to ensure that the children are safe and effective for children to receive at the recommended ages.ices to the broader population in India.</p>
+			</div><!--/col-md-3-->
+			<!-- End About -->
+
+			<!-- Latest -->
+			<div class="col-md-3 " style="margin-bottom: 40px;">
+			<div class="posts">
+			<div class="headline"><h2>Latest Posts</h2></div>
+			<ul class="list-unstyled latest-list">
+			<li>
+			<a href="{% url 'blog' %}">Incredible content</a>
+			<small>October 16, 2023</small>
+			</li>
+			<li>
+			<a href="{% url 'gallery' %}">Latest Images</a>
+			<small>October 16, 2023</small>
+			</li>
+			<li>
+			<a href="{% url 'terms' %}">Terms and Conditions</a>
+			<small>October 16, 2023</small>
+			</li>
+			</ul>
+			</div>
+			</div><!--/col-md-3-->
+			<!-- End Latest -->
+
+			<!-- Link List -->
+			<div class="col-md-3 " style="margin-bottom: 40px;">
+			<div class="headline"><h2>Useful Links</h2></div>
+			<ul class="list-unstyled link-list">
+			<li><a href="{% url 'about' %}">About us</a><i class="fa fa-angle-right"></i></li>
+			<li><a href="{% url 'contact' %}">Contact us</a><i class="fa fa-angle-right"></i></li>
+			<li><a href="{% url 'appointment' %}">Book Appointment</a><i class="fa fa-angle-right"></i></li>
+			</ul>
+			</div><!--/col-md-3-->
+			<!-- End Link List -->
+
+			<!-- Address -->
+			<div class="col-md-3 map-img " style="margin-bottom: 40px;">
+			<div class="headline"><h2>Contact Us</h2></div>
+			<address class="" style="margin-bottom: 40px;">
+			child Vaccination<br />
+			Mumbai, IN <br />
+			Phone: 886 666 00555 <br />
+			Email:childvacc@gmail.com 
+			</address>
+			</div><!--/col-md-3-->
+			<!-- End Address -->
+			</div>
+			</div>
+			</div><!--/footer-->
+
+			<div class="copyright">
+			<div class="container">
+			<div class="row">
+			<div class="col-md-6">
+			<p>
+			2023 &copy; All Rights Reserved.
+			<a href="{% url 'privacy' %}">Privacy Policy</a> | <a href="{% url 'terms' %}">Terms of Service</a>
+			</p>
+			</div>
+
+			<!-- Social Links -->
+			<div class="col-md-6">
+			<ul class="footer-socials list-inline">
+			<li>
+			<a href="http://www.facebook.com" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">
+			<i class="fa fa-facebook"></i>
+			</a>
+			</li>
+			<li>
+			<a href="http://www.skype.com" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Skype">
+			<i class="fa fa-skype"></i>
+			</a>
+			</li>
+			<li>
+			<a href="http://www.googleplus.com" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Google Plus">
+			<i class="fa fa-google-plus"></i>
+			</a>
+			</li>
+			<li>
+			<a href="http://www.linkedin.com" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Linkedin">
+			<i class="fa fa-linkedin"></i>
+			</a>
+			</li>
+			<li>
+			<a href="http://www.Pinterest.com" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Pinterest">
+			<i class="fa fa-pinterest"></i>
+			</a>
+			</li>
+			<li>
+			<a href="http://www.twitter.com" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter">
+			<i class="fa fa-twitter"></i>
+			</a>
+			</li>
+			</ul>
+			</div>
+			<!-- End Social Links -->
+			</div>
+			</div>
+			</div><!--/copyright-->
+			</div>
+			<!--=== End Footer ===-->
+			</div><!--/wrapper-->
+
+
+			</body>
+			</html>

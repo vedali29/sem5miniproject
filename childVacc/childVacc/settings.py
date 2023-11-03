@@ -13,14 +13,38 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import firebase_admin
 from firebase_admin import credentials
+import os
+# import pyrebase
 
+
+BASE_DIR = Path(__file__).resolve().parent.parent
 # Use the path to the JSON file containing your Firebase Admin SDK credentials
-# cred = credentials.Certificate('path/to/your/firebase/credentials.json')
-# firebase_admin.initialize_app(cred,options={
-    # 'databaseURL': 'https://your-project-id.firebaseio.com/')
+# cred = credentials.Certificate('credential.json')
+config = {
+  "type": "service_account",
+  "apiKey": "AIzaSyAbCSVC8yDxih3j7aIf__dFKQ64YlCwz3A",
+  "authDomain": "childvacc-614df.firebaseapp.com",
+  "project_id": "childvacc-614df",
+  "storageBucket": "childvacc-614df.appspot.com",
+  "private_key_id": "ac34efb84d799ebee1452dbf130f022297f57354",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDWRWHpvuTEK0K2\nB4EHKMma1EXs4C7sDzasoxQ835QXeqzMt/mGUBkTJ1Gju7vYU/T7dIBftn4BybNk\nTQ5QOUfNKuUjckBtTfUIJ+Ne0ugnln0x7VvmymoEfqJtFpgYhO3o2kq3CXwuhIkV\nBv47QjrxUVXl9APnSsrYRl2aTUgi2fBO9fSVTNC3wjiX0i2RpoX1clcdRrGAtVeI\ngShYmRr6sQer/87DbJsHnzxbV7hwBbaoMcPxg/xrQwVjHxQdNhoSArQWyeaKDo7/\n1nzRfb2h2/m++wi/sdKl7d4O8crXLQEAsE0s9KUR5TKkk4Kg2q9wdgf+ojAcB5QR\nW9H4OhkZAgMBAAECggEAEXjW4xiNzvE4H1+9RbgtuFJW4VnmeZlD/A/QNqaEjOWT\n8Z2O20TsxoMORSupxZoS/+4gCa332G16E1O1NxV0pWY6CQnn9wHEWUXnZHQOOiwr\nSUbxl4Ap5PPuiras8FLmk3Y5YXOEjMaB5xUK5goghEz9lCKxrsqKf9g9CbgDidPV\nWkXnNw1c7xIvG71JmfUVYPn6GDfV0jvhIaOtQ10z+Fi6NIAA4jZGq1IUsGJ26J/R\nrw9t2AYsko1jL3hM94pe8bpUV481sB7qdnkLNYPvedxDCkIiJIXaA8mwg+pvjhij\n7MazY0+SCXQvMzin7pBFgRQBrkcLFEOR7XLAWFYNgQKBgQD7Qbh5fqKrkgyWVeud\nn2LOccoY9eOL0C2Gh/rp+w3Ar6QYMX+Mw3Jx6/0rKwfr4YYJGpyvx8czwMVdsVmp\nuC/JHqt0Jw77MLZRs5OuGyAIdRFctXFJtB0KPbnRIwKbiwqRyyOwCMVf0OKL/Lgt\ns9Jp0lB3gCOJjk/NQ7TPTo/29wKBgQDaUOqhjsfYq+ItFmJ5Xyp0ipYVbQsY8ZlI\nsJTb65sY4Kt4zxb+cdZ6RucMeMiNLNXLf7uM6GUvuJOblNyUjtQvabLvXe5njHo5\nNRlWcjEDdc9cV3hKOS+t4qkdIdQxMCYrgCdurHlclQYRmzeKO5XfnOy2tUMvNaON\nRP9Cg80cbwKBgQCHovPmSpGgU0iOQ7XdMnTRg6YZEWyURn69GF1AwLGs6mSIVvhH\nUh9PFplmG2W8VdPYyE/7qLqF2rPxH1OLBo5tYSwnmQpCWgqiUnIP1D7XsfL8fEq7\nAguHQskz+FVpCIddKy+J0UJTtl0GOxhmO6QEUm/0Au2sTXIRGlLacsvPAwKBgFOK\nHx6POl3o9/V02V3EUsShu2ibf2GeIZ+1ImE9OO4+Gp9x70SSXxYPR554IZYUEAN8\n71GuI/os0R75yaZ3OS6jbbs24GFzWdnGPdncfHDshdq6BeexFlOdpkTliwL/f7up\noG0zRoVs6ROXp5sXzfPxYotPtVO9XMZUHrFfKf+1AoGALeUXPQe/8wXDiVqkQCw1\nr9rzjhjddAVeYBBqrFeiOhDDrVCYn6cuK/RQih/HC4SYDOsYoP70cK7qRBDE9Ey0\nNiISH2VjcC94ABRmziW6gM8ZOxzbdWzYLZjS2XXO3SSdvi0QD1fh8qluAcFAoRtF\nEoOkKm9UkuWV+jmrc32ViNE=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-c2ygy@childvacc-614df.iam.gserviceaccount.com",
+  "client_id": "112796066415265309626",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-c2ygy%40childvacc-614df.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com",
+  "databaseURL": "https://childvacc-614df-default-rtdb.firebaseio.com/"
+}
+cred = credentials.Certificate(os.path.join(BASE_DIR, 'credential.json'))
+firebase_admin.initialize_app(cred,options={'databaseURL': 'https://childvacc-614df-default-rtdb.firebaseio.com/'})
+
+# firebase = pyrebase.initialize_app(config)
+# auth = firebase.auth()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -45,6 +69,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'vacc',
+    'register',
+    'login',
+    'dash',
+    'appointment',
 ]
 
 MIDDLEWARE = [
@@ -55,6 +83,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
 ]
 
 ROOT_URLCONF = 'childVacc.urls'
@@ -62,7 +91,7 @@ ROOT_URLCONF = 'childVacc.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,8 +155,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+    # '/var/www/static/',
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# settings.py
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+
+# for 
+AUTHENTICATION_BACKENDS = ['login.authenticate.EmailBackend']
+

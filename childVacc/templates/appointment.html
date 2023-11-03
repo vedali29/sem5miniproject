@@ -1,0 +1,92 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <!-- Add this line to load static files -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHILD VACCINATION | Appointment</title>
+
+    <!-- Web Fonts -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin">
+
+    <!-- CSS Global Compulsory -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+
+    <!-- CSS Header and Footer -->
+    <link rel="stylesheet" href="{% static 'assets/css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/footer.css' %}">
+
+    <!-- CSS Implementing Plugins -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/line-icons-pro/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/line-icons/line-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css' %}">
+
+    <!-- CSS Customization -->
+    <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+</head>
+
+<body>
+    <div class="wrapper">
+        <!--=== Header v1 ===-->
+        <!-- ... (Header code remains the same) ... -->
+
+        <!--=== Heading ===-->
+        <div class="container content">
+            <div class="row " style="margin-bottom: 30px;">
+                <div class="col-md-9 " style="margin-bottom: 30px;">
+                    <div class="headline">
+                        <h2>Appointment Form</h2>
+                    </div>
+
+                    <!--=== APPOINTMENT FORM ===-->
+                    <form action="{% url 'appointment' %}" method="post" enctype="multipart/form-data" class="sky-form sky-changes-3">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <div class="alert alert-success successBox">
+                            <button type="button" class="close" onclick="showMsg(1);">×</button>
+                            <strong style="font-size: 16px;">Congratulations!</strong><span class="alert-link"> Your Appointment has been booked successfully.</span>
+                        </div>
+
+                        <footer>
+                            <button type="submit" class="btn-u">SUBMIT</button>
+                            <a href="{% url 'child' %}">Back</a>
+                        </footer>
+                    </form>
+
+                </div><!--/col-md-9-->
+
+                <!-- side part of appointment -->
+
+                <div class="headline">
+                    <h2>READY TO VACCINATE !!</h2>
+                </div>
+
+            </div>
+
+            <!--=== Footer ===-->
+            <!-- ... (Footer code remains the same) ... -->
+
+        </div><!--/wrapper-->
+
+        <script type="text/javascript" src="{% static 'assets/plugins/jquery/jquery.min.js' %}"></script>
+        <script type="text/javascript">
+            function showMsg(flag) {
+                if (flag == 0) {
+                    $('.successBox').css('display', 'block');
+                } else {
+                    $('.successBox').css('display', 'none');
+                }
+            }
+        </script>
+
+</body>
+
+</html>

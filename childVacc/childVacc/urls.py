@@ -21,6 +21,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', include('vacc.urls')),
+    path('register/',include('register.urls')),
+    path('login/',include('login.urls')),
+    path('',include('appointment.urls')),
+    path('dashboard/',include('dash.urls')),
     # path('/',views.child,name='child'),
 ]
 
